@@ -1,4 +1,5 @@
 import {Store} from './store';
+import {getProductLinksBuilder} from './helpers/card';
 
 export const Ldlc: Store = {
   currency: '€',
@@ -246,5 +247,55 @@ export const Ldlc: Store = {
       url: 'https://www.ldlc.com/fr-be/fiche/PB00398373.html',
     },
   ],
+  linksBuilder: {
+    builder: getProductLinksBuilder({
+      productsSelector: '.pdt-desc',
+      sitePrefix: 'https://www.ldlc.com',
+      titleSelector: '.title-3',
+      urlSelector: 'a[href]',
+    }),
+    urls: [
+      {
+        series: 'rx6800',
+        url:
+          'https://www.ldlc.com/informatique/pieces-informatique/carte-graphique-interne/c4684/+fv121-19339.html'
+      },
+      {
+        series: 'rx6800xt',
+        url:
+          'https://www.ldlc.com/informatique/pieces-informatique/carte-graphique-interne/c4684/+fv121-19340.html'
+      },
+      {
+        series: 'rx6900xt',
+        url:
+          'https://www.ldlc.com/informatique/pieces-informatique/carte-graphique-interne/c4684/+fv121-19367.html'
+      },
+      {
+        series: '3060',
+        url:
+          'https://www.ldlc.com/informatique/pieces-informatique/carte-graphique-interne/c4684/+fv121-19509.html'
+      },
+      {
+        series: '3060ti',
+        url:
+          'https://www.ldlc.com/informatique/pieces-informatique/carte-graphique-interne/c4684/+fv121-19365.html'
+      },
+      {
+        series: '3070',
+        url:
+          'https://www.ldlc.com/informatique/pieces-informatique/carte-graphique-interne/c4684/+fv121-19184.html'
+      },
+      {
+        series: '3080',
+        url:
+          'https://www.ldlc.com/informatique/pieces-informatique/carte-graphique-interne/c4684/+fv121-19183.html'
+      },
+      {
+        series: '3090',
+        url:
+          'https://www.ldlc.com/informatique/pieces-informatique/carte-graphique-interne/c4684/+fv121-19185.html'
+      },
+    ],
+  },
   name: 'ldlc',
 };
